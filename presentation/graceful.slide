@@ -1,0 +1,31 @@
+Golang Build-in Graceful Shutdown
+
+Mateusz Dymiński
+@m_dyminski
+github.com/mateuszdyminski/graceful
+
+* Graceful shutdown
+
+Graceful shutdown allows you to shutdown the http.Server without interrupting any active connections. Shutdown works by first closing all open listeners, then closing all idle connections, and then waiting indefinitely for connections to return to idle and then shut down.
+
+* Pre 1.8 approach
+
+[[https://github.com/tylerb/graceful][Graceful shutdown by tylerb]]
+[[https://rcrowley.org/articles/golang-graceful-stop.html][Graceful shutdown by rcrowley]]
+[[https://github.com/facebookgo/grace][Graceful shutdown by Facebook]]
+
+* http.Server Shutdown func
+
+.code data/server.go
+
+* Graceful shutdown in Golang 1
+
+.code ../graceful.go /START OMIT/,/END OMIT/
+
+* Graceful shutdown in Golang 2
+
+.code ../graceful.go /START2 OMIT/,/END2 OMIT/
+
+* Demo
+
+* Questions?
